@@ -1,0 +1,29 @@
+{
+  "name": "swagger-mod",
+  "version": "1.0.3",
+  "description": "Modifies an existing swagger document using filters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwelagedara/swagger-mod.git"
+  },
+  "keywords": [
+    "swagger",
+    "modify",
+    "filter"
+  ],
+  "author": "Pubudu Welagedara <pubuduwelagedara@gmail.com> (http://pubudu.online)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pwelagedara/swagger-mod/issues"
+  },
+  "homepage": "https://github.com/pwelagedara/swagger-mod#readme",
+  "dependencies": {
+    "loadash": "^1.0.0",
+    "swagger-parser": "^5.0.2",
+    "user": "0.0.0"
+  }
+}
