@@ -66,38 +66,26 @@ function filter(schema, opts) {
 function cleanup(schema) {
     
     return new Promise(function(resolve, reject) {
-        //console.log(schema.tags);
         if(schema.tags) {
-            var clonedSchema = JSON.parse(JSON.stringify(schema))
-
             schema.tags = _.remove(schema.tags, function(o) {
-                
-                // var returnValue = false;
-                // _.forEach(schema.paths, function(urlBody, url) {
-                //     var keep = false;
-
-                //     console.log('url......' + url); 
-                //     _.forEach(urlBody, function(methodBody, method) {
-
-
-                //         keep = _.includes(methodBody.tags, o.name);
-                //         return keep;
- 
-                //     });
-
-                //     returnValue = keep;
-                //     return keep;
-                //   });
-
-                //   return returnValue;
-                return true; // false removes the element
+                var keep = false;
+                _.forEach(schema.paths, function(value, key) {
+                    _.forEach(value, function(value1, key1) {
+                        if(!value1.tags){
+                            keep = _.isEqual('default', o.name);
+                        } else {
+                            keep = _.includes(value1.tags, o.name);
+                        }  
+                        return !keep;
+                    });
+                    return !keep;
+                });
+                return keep; // Returning false removes the element
             });
-            console.log(schema.tags);
         }
         return resolve(schema);
     });
 }
-
 
 // Process http includes and excludes
 function processHttp(schema, opts) {
