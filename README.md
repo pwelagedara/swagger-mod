@@ -95,9 +95,6 @@ const opts = {
 
 The `examples` directory in the [source repository][source] has many examples.
 
-## ToDos
-- Remove unused Security Definitions
-
 ## License 
 
 MIT License. Free and Open Source.
