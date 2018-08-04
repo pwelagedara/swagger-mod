@@ -7,7 +7,7 @@ const opts = {
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
         tags: {
             exclude: [
-                '/^pet$/i', // Exact match
+                '/^pet$/i', // Exact match( case insensitive)
                 '/store/i' // Ignores case
             ]
         }
