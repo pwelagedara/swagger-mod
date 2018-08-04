@@ -17,7 +17,6 @@ module.exports = function(schemaDoc, opts) {
                 // Run the Swagger Document through the filters
                 return filter(schema, opts);
             }).then(function(filteredSchema) {
-
                 return cleanup(filteredSchema);
             }).then(function(cleanedUpSchema) {
                 return resolve(cleanedUpSchema);

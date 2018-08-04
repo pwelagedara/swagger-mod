@@ -1,6 +1,6 @@
 # swagger-mod
 
-Modifies an existing swagger document using filters. The documentation is still not fully complete but many examples can be found in `examples` directory in the [source code][source] repository. 
+Modifies an existing swagger document using filters. The documentation is still not fully complete but many examples can be found in `examples` directory in the [source code repository][source]. 
 
 ## How to use the library
 Install the library.
@@ -93,11 +93,11 @@ const opts = {
 
 ## Other examples
 
-The `examples` directory in the [source repository][source] has many examples.
+The `examples` directory in the [source code repository][source] has many examples.
 
 ## License 
 
-MIT License. Free and Open Source.
+MIT License means Free and Open Source.
 
 [source]: https://github.com/pwelagedara/swagger-mod
 [regex]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions

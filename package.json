@@ -1,6 +1,6 @@
 {
   "name": "swagger-mod",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Modifies an existing swagger document using filters",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,8 @@
   "keywords": [
     "swagger",
     "modify",
-    "filter"
+    "filter",
+    "query"
   ],
   "author": "Pubudu Welagedara <pubuduwelagedara@gmail.com> (http://pubudu.online)",
   "license": "MIT",
