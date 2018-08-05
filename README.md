@@ -1,6 +1,6 @@
 # swagger-mod
 
-Modifies an existing swagger document using filters. The documentation is still not fully complete but many examples can be found in `examples` directory in the [source code repository][source]. 
+Modifies an existing swagger document using filters. Many examples can be found in `examples` directory in the [source code repository][source]. 
 
 ## How to use the library
 Install the library.
@@ -95,9 +95,29 @@ const opts = {
 
 The `examples` directory in the [source code repository][source] has many examples.
 
+## Writing regular expressions
+
+A regular expression is is a pattern enclosed within two slashes. 
+
+```js
+/Store/
+```
+`^` matches the beginning of input and `$` matches end of input. Therefore the regular expression below matches `Store`.
+
+```js
+/^Store$/
+```
+To make this case insensitive add `i` flag. The regular expression below matches `Store`, `store`, `STORE` etc.
+
+```js
+/^Store$/i
+```
+
+For more ways to write regular expressions refer to the [documentation][regex].
+
 ## License 
 
-MIT License means Free and Open Source.
+MIT License means Free and Open Source. 
 
 [source]: https://github.com/pwelagedara/swagger-mod
 [regex]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
