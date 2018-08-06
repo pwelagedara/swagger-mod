@@ -4,6 +4,7 @@ const opts = {
     filters: {
 
         // Filter by HTTP methods
+        // Do not use regular expressions here
         http: {
             exclude: ['delete', 'put', 'post']
         }
