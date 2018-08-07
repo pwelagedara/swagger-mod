@@ -96,6 +96,10 @@ const opts = {
 
 The `examples` directory in the [source code repository][source] has many examples.
 
+## A demo application 
+
+A demo express app using `swagger-mod` can be found [here][demo].
+
 ## Writing regular expressions
 
 A regular expression is is a pattern enclosed within two slashes. 
@@ -122,3 +126,4 @@ MIT License means Free and Open Source.
 
 [source]: https://github.com/pwelagedara/swagger-mod
 [regex]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+[demo]: https://github.com/pwelagedara/swagger-mod-demo
