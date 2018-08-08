@@ -1,7 +1,8 @@
 node_modules
 .DS_Store
 swagger.yaml
-swagger.json
 petstore.yaml
+petstore.json
 examples/test.js
 test.json
+.nyc_output

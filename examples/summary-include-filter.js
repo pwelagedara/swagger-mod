@@ -1,3 +1,5 @@
+'use strict';
+
 const swaggerMod= require("./../index.js");
 
 const opts = {
