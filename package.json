@@ -1,6 +1,6 @@
 {
   "name": "swagger-mod",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Modifies an existing swagger document using filters",
   "main": "index.js",
   "scripts": {

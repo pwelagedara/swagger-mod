@@ -331,7 +331,7 @@ describe('swaggerMod()', () => {
     // Having both include and exclude filters
 
     // HTTP include and exclude filters
-    it('http include and filter should throw an error', async () => {
+    it('http include and exclude filter should throw an error', async () => {
 
         const opts = {
             filters: {
@@ -339,6 +339,107 @@ describe('swaggerMod()', () => {
                 http: {
                     include: ['delete', 'put'],
                     exclude: ['post']
+                }
+            }
+        };
+
+        try {
+            const result = await swaggerMod(url, opts);
+            expect(1).to.equal(2); 
+        } catch(err) {
+            expect(err.message).to.equal('Include and exclude arrays cannot coexist. Specify only one');
+        }
+    });
+
+    // path include and exclude filters
+    it('path include and exclude filter should throw an error', async () => {
+
+        const opts = {
+            filters: {
+    
+                paths: {
+                    exclude: [
+                            '/^/pet/'
+                    ],
+                    include: [
+                        '/^/store/'
+                    ]
+                }
+            }
+        };
+
+        try {
+            const result = await swaggerMod(url, opts);
+            expect(1).to.equal(2); 
+        } catch(err) {
+            expect(err.message).to.equal('Include and exclude arrays cannot coexist. Specify only one');
+        }
+    });
+
+    // tags include and exclude filters
+    it('tag include and exclude filter should throw an error', async () => {
+
+        const opts = {
+            filters: {
+    
+                tags: {
+                    exclude: [
+                        '/^pet$/i',
+                        '/store/i' 
+                    ],
+                    include: [
+                        '/^user$/i'
+                    ]
+                }
+            }
+        };
+
+        try {
+            const result = await swaggerMod(url, opts);
+            expect(1).to.equal(2); 
+        } catch(err) {
+            expect(err.message).to.equal('Include and exclude arrays cannot coexist. Specify only one');
+        }
+    });
+
+    // summary include and exclude filters
+    it('summary include and exclude filter should throw an error', async () => {
+
+        const opts = {
+            filters: {
+    
+                summary: {
+                    include: [
+                        '/Add a new pet to the store/i'
+                    ],
+                    exclude: [
+                        '/^Returns pet inventories by status$/'
+                    ]
+                }
+            }
+        };
+
+        try {
+            const result = await swaggerMod(url, opts);
+            expect(1).to.equal(2); 
+        } catch(err) {
+            expect(err.message).to.equal('Include and exclude arrays cannot coexist. Specify only one');
+        }
+    });
+
+    // description include and exclude filters
+    it('description include and exclude filter should throw an error', async () => {
+
+        const opts = {
+            filters: {
+    
+                description: {
+                    exclude: [
+                        '/Other values will generated exceptions/' 
+                    ],
+                    include: [
+                        '/Other values will generated exceptions/' 
+                    ]   
                 }
             }
         };
@@ -439,4 +540,31 @@ describe('swaggerMod()', () => {
         });
         expect(tags).to.have.all.members(['pet', 'default']);
     });
+
+    // Swagger with no tags
+
+    // Delete tags
+    it('swagger with no tags should work', async () => {
+
+        const intermediateResult = await swaggerMod(url, {});
+        delete intermediateResult.tags;
+
+        const opts = {
+            filters: {
+    
+                tags: {
+                    include: [
+                        '/^pet$/i',
+                        '/store/i' 
+                    ]
+                }
+            }
+        };
+
+        const result = await swaggerMod(intermediateResult, opts);
+
+        // Paths
+        expect(result.paths).to.have.all.keys('/pet', '/pet/findByStatus', '/pet/findByTags', '/pet/{petId}', '/pet/{petId}/uploadImage', '/store/inventory', '/store/order', '/store/order/{orderId}');
+    });
+
 });
