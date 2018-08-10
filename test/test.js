@@ -9,6 +9,7 @@ const url = './swagger.json';
 
 // Refer to Chai Documentation
 // http://www.chaijs.com/api/bdd/
+// TODO: 08/09/2018 const opts = { filters: { ... } } seems to get repeated. Fix it.
 describe('swaggerMod()', () => {
 
     // Simple Include filters
