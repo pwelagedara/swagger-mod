@@ -129,7 +129,7 @@ For more ways to write regular expressions refer to the [documentation][regex].
 
 ## License 
 
-The Project is under MIT License. Internet is free. Use the code anyway you like. 
+The Project is under [MIT][mit] License. Internet is free. Use the code anyway you like. 
 
 Sample swagger document `swagger.json` is under [Apache 2.0 License][apache2].
 
@@ -137,3 +137,4 @@ Sample swagger document `swagger.json` is under [Apache 2.0 License][apache2].
 [regex]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 [demo]: https://github.com/pwelagedara/swagger-mod-demo
 [apache2]: http://www.apache.org/licenses/LICENSE-2.0.html
+[mit]: https://opensource.org/licenses/MIT
